@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicação Growdevers</title>
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+
+<body>
+    <!--Login page-->
+    <section id="login-page">
+        <div class="login-wrap">
+            <div class="login-html">
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
+                    class="tab">Login</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2"
+                    class="tab">Cadastrar</label>
+                <div class="login-form">
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label for="user" class="label">Usuário</label>
+                            <input id="userLogin" type="text" class="input" placeholder="Insira seu nome de usuário"
+                                required>
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Senha</label>
+                            <input id="passLogin" type="password" class="input" data-type="password"
+                                placeholder="Insira sua senha" required>
+                        </div>
+                        <div class="group">
+                            <input id="check" type="checkbox" class="check" checked>
+                            <label for="check"><span class="icon"></span> Mantenha-me logado</label>
+                        </div>
+                        <div class="group">
+                            <input type="button" class="button" value="Entrar" id="login">
+                        </div>
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <a href="#forgot">Esqueceu sua senha?</a>
+                        </div>
+                    </div>
+                    <div class="sign-up-htm">
+                        <div class="group">
+                            <label for="user" class="label">Nome</label>
+                            <input id="name" type="text" class="input" placeholder="Insira seu nome" required>
+                        </div>
+                        <div class="group">
+                            <label for="user" class="label">Nome de usuário</label>
+                            <input id="username" type="text" class="input" placeholder="Insira um nome de usuário"
+                                required>
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Senha</label>
+                            <input id="pass" type="password" class="input" data-type="password"
+                                placeholder="Crie sua senha" required>
+                        </div>
+                        <div class="group">
+                            <label for="type" class="label">Tipo</label>
+                            <div class="btn-radio-group">
+                                <select name="type" id="type">
+                                    <option value="Admin">Admin</option>
+                                    <option value="Growdever">Growdever</option>
+                                </select>
+                                <!--<input type="radio" name="type" id="op-type" value="Admin" class="icon" id="type1"><label for="check" >Operador</label>
+                                <input type="radio" name="type" id="user-type" value="Growdever" class="icon" id="type2"><label for="check">Usuário</label>-->
+                            </div>
+                        </div>
+                        <div class="group">
+                            <input type="button" class="button" value="Criar" id="register">
+                        </div>
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <label class="tab-1" for="tab-1">Já possui conta?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Home Page-->
+    <section id="home-page">
+         
+    </section>
+
+</body>
+<script src="./bundle.js"></script>
+
+
+</html>
