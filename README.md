@@ -9,4 +9,4 @@ Arquivos da versão 1.0 do projeto de Cadastro de alunos Growdev.
 Utilização de HTML, CSS, BootStrap, JS, NodeJS.
 
 ##
-Em desenvolvimento | 2020
+Em desenvolvimento | 2021
