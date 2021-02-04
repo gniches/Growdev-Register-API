@@ -88,21 +88,15 @@
                         <div class="collapse navbar-collapse ">
                             <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0 text-nowrap" href="#"><i class="fa fa-bullseye fa-fw"></i><span class="font-weight-bold">Dashboard</span></a>
+                                    <a class="nav-link pl-0 text-nowrap" href="#" id="dashboard"><i class="fa fa-bullseye fa-fw"></i><span class="font-weight-bold">Dashboard</span></a>
                                 </li>
                                 <hr class="hr-dashbord">
                                 <li class="nav-item">
                                     <a class="nav-link pl-0" href="#"><i class="fa fa-cog fa-fw"></i> <span class="d-none d-md-inline">Conta</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0" href="#"><i class="fa fa-heart codeply fa-fw"></i> <span class="d-none d-md-inline">Growdevers</span></a>
-                                </li>´
-                                <div class="d-flex" id="search-nav-bar">
-                                    <form class="d-flex tm-search-form">
-                                        <input id="search-txt" class="form-control tm-search-input" type="search" placeholder="Pesquisar" aria-label="Search">
-                                        <button id="search-filter" class="btn btn-outline-success tm-search-btn" type="button" placeholder="Go">Go</button>
-                                    </form>
-                                </div>
+                                    <a class="nav-link pl-0" href="#" id="growdevers-tab"><i class="fa fa-heart codeply fa-fw"></i> <span class="d-none d-md-inline">Growdevers</span></a>
+                                </li>                                
                                 <li class="nav-item">
                                     <div class="group d-flex flex-column justify-content-end" id="logout-btn">
                                         <button type="button" class="button" value="Sair" id="logout">Sair</button>
@@ -113,8 +107,17 @@
                     </nav>
                 </aside>
                 <main class="col bg-faded py-3 flex-grow-1" id="main-home">
-                    <h2 class="d-flex justify-content-center">Cadastro Growdevers</h2>
-                    <div > <!--INJETAR CONTEÙDO-->
+                    <div class="row">                        
+                    <div class="d-flex justify-content-between" id="search-nav-bar">
+                        <h2 class="d-flex" id="h2">Cadastro Growdevers</h2>
+                        <form class="d-flex tm-search-form">
+                            <input id="search-txt" class="form-control tm-search-input" type="search" placeholder="Pesquisar" aria-label="Search">
+                            <button id="search-filter" class="btn btn-outline-success tm-search-btn" type="button" placeholder="Go">Go</button>
+                        </form>
+                    </div>
+                    </div>
+                    
+                    <div id="tbl-header"> <!--INJETAR CONTEÙDO-->
                         <div class="tbl-header">
                             <table cellpadding="0" cellspacing="0" border="0">
                                 <thead>
@@ -129,9 +132,52 @@
                             </table>
                         </div>
                         <div id="show-list">
-
+                            <!--INJECTED BY JS-->
                         </div>
-                    </div>                     
+                    </div>
+                    <div id="adm-growdever">
+                        <div id="main" class="container-fluid">
+                            <div class="tbl-header">
+                                <table cellpadding="0" cellspacing="0" border="0">
+                                    <thead>
+                                        <tr>
+                                        <th><h6>Gerenciar Growdevers</h6></th>                                        
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <h3 class="page-header">Adicionar Growdever</h3>
+                            <form >
+                                <div class="row">
+                                    <div class="form-group col-md-3">
+                                      <label for="campo1">E-mail</label>
+                                      <input type="text" class="form-control" id="email-growdever">
+                                    </div>
+                                    
+                                    <div class="form-group col-md-3">
+                                      <label for="campo2">Telefone/Celular</label>
+                                      <input type="text" class="form-control" id="phone-growdever">
+                                    </div>
+                                    
+                                    <div class="form-group col-md-3">
+                                      <label for="campo3">Programa</label>
+                                      <select name="program" id="program-growdever">
+                                          <option value="Starter">Starter</option>
+                                          <option value="Advanced">Advanced</option>
+                                      </select>
+                                      <!--<input type="text" class="form-control" id="program-growdever">-->
+                                    </div>                                
+                                <hr />
+                                <div id="actions" class="row">
+                                  <div class="col-md-12">
+                                    <button type="button" class="btn btn-primary" id="add-new-growdever">Salvar</button>                                    
+                                    <a href="#" class="btn btn-default">Cancelar</a>
+                                  </div>
+                                </div>
+                              </form>                            
+                        </div>                                             
+                        <!--INJECTED BY JS-->
+                    </div>                                      
                 </main>
             </div>
         </div>

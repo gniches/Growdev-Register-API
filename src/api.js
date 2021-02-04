@@ -52,6 +52,19 @@ class API {
 
         return api.post(url, data);
     }
+
+    deleteAuth(url, data, token) {
+        const api = axios.create({
+            baseURL: this.baseUrl,
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+                Authorization: `Bearer ${token}`
+            },
+        });
+
+        return api.delete(url, data);
+    }
 }
 
 export default new API();
