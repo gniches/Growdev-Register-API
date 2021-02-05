@@ -63,7 +63,7 @@ class API {
             },
         });
 
-        return api.delete(url); //data
+        return api.delete(url);
     }
 }
 

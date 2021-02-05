@@ -6,8 +6,8 @@ class App {
 
         document.getElementById('login').onclick = () => this.login();
         document.getElementById('register').onclick = () => this.register();
-        document.getElementById('logout').onclick = () => this.logout();  
-                       
+        document.getElementById('logout').onclick = () => this.logout();
+
         this.token = "";
 
         this.data = [];
@@ -16,8 +16,8 @@ class App {
         document.getElementById('home-page').style.display = "none";
         document.getElementById('adm-growdever').style.display = "none";
         document.getElementById('growdevers-tab').onclick = () => this.admGrowdevers();
-        document.getElementById('new-growdever').onclick = () => this.admGrowdevers();     
-        
+        document.getElementById('new-growdever').onclick = () => this.admGrowdevers();
+
     }
 
     login() {
@@ -70,9 +70,8 @@ class App {
         api.getAuth('/growdevers', this.token)
             .then(r => {
                 let html = "";
-                console.log(r.data);
+                //console.log(r.data);
                 r.data.growdevers.forEach((gd) => {
-                                        
                     html += `                
                 <div class="tbl-content">
                     <table cellpadding="0" cellspacing="0" border="0">
@@ -102,7 +101,7 @@ class App {
     };
 
     addGrowdever() {
-        
+
         const email = document.getElementById('email-growdever').value;
         const phone = document.getElementById('phone-growdever').value;
         const program = document.getElementById('program-growdever').value;
@@ -116,29 +115,35 @@ class App {
         }, this.token)
             .then(r => console.log(r.data))
             .catch(e => alert(e.response.data.message));
-            setTimeout(alert("Growdever cadastrado com sucesso!"), 2000); 
+        this.searchGrowdevers();
+        alert("Growdever cadastrado com sucesso!");
+
+        document.getElementById("show-list").style.display = "block";
+        document.getElementById("tbl-header").style.display = "block";
+        document.getElementById("adm-growdever").style.display = "none";
+
     }
 
-    admGrowdevers() {        
+    admGrowdevers() {
         document.getElementById("show-list").style.display = "none";
         document.getElementById("tbl-header").style.display = "none";
-        document.getElementById("adm-growdever").style.display = "block";            
+        document.getElementById("adm-growdever").style.display = "block";
+        document.getElementById("add-new-growdever").onclick = () => this.addGrowdever();
     }
 
     deleteGrowdever(event) {
         const uid = event.path[0].dataset.id;
-        console.log(uid);
-        
+
         if (!confirm("Confirma a exclusão?")) {
             return;
         }
 
         api.deleteAuth(`/growdevers/${uid}`, this.token)
-        .then(r => console.log(r.data))
-        .catch(e => alert(e.response.data.message));
-        
+            .then(r => console.log(r.data))
+            .catch(e => alert(e.response.data.message));
         this.searchGrowdevers();
-        
+        alert("Growdever deletado com sucesso!");
+
     }
 }
 
