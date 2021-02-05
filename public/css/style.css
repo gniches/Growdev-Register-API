@@ -188,7 +188,7 @@ a{color:inherit;text-decoration:none}
 }
 
 #search-nav-bar {
-	padding-left: 8px !important;
+	margin-bottom: 8px;
 }
 
 #logout-btn {
