@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicação Growdevers</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -64,7 +65,7 @@
                                 <select name="type" id="type">
                                     <option value="Admin">Admin</option>
                                     <option value="Growdever">Growdever</option>
-                                </select>                                                                                          
+                                </select>
                             </div>
                         </div>
                         <div class="group">
@@ -88,46 +89,52 @@
                         <div class="collapse navbar-collapse ">
                             <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0 text-nowrap" href="#" id="dashboard"><i class="fa fa-bullseye fa-fw"></i><span class="font-weight-bold">Dashboard</span></a>
+                                    <a class="nav-link pl-0 text-nowrap" href="#" id="dashboard"><i
+                                            class="fa fa-bullseye fa-fw"></i><span
+                                            class="font-weight-bold">Dashboard</span></a>
                                 </li>
                                 <hr class="hr-dashbord">
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0" href="#"><i class="fa fa-cog fa-fw"></i> <span class="d-none d-md-inline">Conta</span></a>
+                                    <a class="nav-link pl-0" href="#"><i class="fa fa-cog fa-fw"></i> <span
+                                            class="d-none d-md-inline">Conta</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0" href="#" id="growdevers-tab"><i class="fa fa-heart codeply fa-fw"></i> <span class="d-none d-md-inline">Growdevers</span></a>
-                                </li>                                
+                                    <a class="nav-link pl-0" href="#" id="growdevers-tab"><i
+                                            class="fa fa-heart codeply fa-fw"></i> <span
+                                            class="d-none d-md-inline">Growdevers</span></a>
+                                </li>
                                 <li class="nav-item">
                                     <div class="group d-flex flex-column justify-content-end" id="logout-btn">
                                         <button type="button" class="button" value="Sair" id="logout">Sair</button>
-                                    </div>                                    
-                                </li>                                
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </nav>
                 </aside>
                 <main class="col bg-faded py-3 flex-grow-1" id="main-home">
-                    <div class="row">                        
-                    <div class="d-flex justify-content-between" id="search-nav-bar">
-                        <h2 class="d-flex" id="h2">Cadastro Growdevers</h2>  
-                        <button type="button" class="btn btn-success btn" id="new-growdever">Adicionar</button>                      
-                        <form class="d-flex tm-search-form">
-                            <input id="search-txt" class="form-control tm-search-input" type="search" placeholder="Pesquisar" aria-label="Search">
-                            <button id="search-filter" class="btn btn-outline-success tm-search-btn" type="button" placeholder="Go">Go</button>
-                        </form>
+                    <div class="row">
+                        <div class="d-flex justify-content-between" id="search-nav-bar">
+                            <h2 class="d-flex" id="h2">Cadastro Growdevers</h2>
+                            <button type="button" class="btn btn-success btn" id="new-growdever">Adicionar</button>
+                            <form class="d-flex tm-search-form">
+                                <input id="search-txt" class="form-control tm-search-input" type="search"
+                                    placeholder="Pesquisar" aria-label="Search">
+                                <button id="search-filter" class="btn btn-outline-success tm-search-btn" type="button"
+                                    placeholder="Go">Go</button>
+                            </form>
+                        </div>
                     </div>
-                    </div>
-                    
-                    <div id="tbl-header"> <!--INJETAR CONTEÙDO-->
+                    <div id="tbl-header">
                         <div class="tbl-header">
                             <table cellpadding="0" cellspacing="0" border="0">
                                 <thead>
                                     <tr>
-                                    <th>UID</th>
-                                    <th>E-mail</th>
-                                    <th>Telefone</th>
-                                    <th>Programa</th>                                    
-                                    <th>Ações</th>                                    
+                                        <th>UID</th>
+                                        <th>E-mail</th>
+                                        <th>Telefone</th>
+                                        <th>Programa</th>
+                                        <th>Ações</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -136,53 +143,107 @@
                             <!--INJECTED BY JS-->
                         </div>
                     </div>
+                    <!--ADD GROWDEVER-->
                     <div id="adm-growdever">
                         <div id="main" class="container-fluid">
                             <div class="tbl-header">
                                 <table cellpadding="0" cellspacing="0" border="0">
                                     <thead>
                                         <tr>
-                                        <th><h6>Adicionar Growdever</h6></th>                                        
+                                            <th>
+                                                <h6>Adicionar Growdever</h6>
+                                            </th>
                                         </tr>
                                     </thead>
                                 </table>
                             </div>
                             <hr>
-                            <form >
+                            <form>
                                 <div class="row">
                                     <div class="form-group col-md-3">
-                                      <label for="campo1">E-mail</label>
-                                      <input type="text" class="form-control" id="email-growdever" placeholder="Insira seu e-mail">
+                                        <label for="campo1">E-mail</label>
+                                        <input type="text" class="form-control" id="email-growdever"
+                                            placeholder="Insira seu e-mail">
                                     </div>
-                                    
+
                                     <div class="form-group col-md-3">
-                                      <label for="campo2">Telefone/Celular</label>
-                                      <input type="text" class="form-control" id="phone-growdever" placeholder="Insira seu celular"> 
+                                        <label for="campo2">Telefone/Celular</label>
+                                        <input type="text" class="form-control" id="phone-growdever"
+                                            placeholder="Insira seu celular">
                                     </div>
-                                    
+
                                     <div class="form-group col-md-3">
-                                      <label for="campo3">Programa</label>                                      
-                                      <input type="text" class="form-control" id="program-growdever" placeholder="Starter ou Advanced">
-                                    </div>                                
-                                <hr />
-                                <div id="actions" class="row">
-                                  <div class="col-md-12">
-                                    <button type="button" class="btn btn-primary" id="add-new-growdever">Salvar</button>                                    
-                                    <a href="#" class="btn btn-default">Cancelar</a>
-                                  </div>
-                                </div>
-                              </form>                            
-                        </div>                                             
-                        <!--INJECTED BY JS-->
-                    </div>                                      
-                </main>
+                                        <label for="campo3">Programa</label>
+                                        <input type="text" class="form-control" id="program-growdever"
+                                            placeholder="Starter ou Advanced">
+                                    </div>
+                                    <hr />
+                                    <div id="actions" class="row">
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary"
+                                                id="add-new-growdever">Salvar</button>
+                                            <a href="#" class="btn btn-default">Cancelar</a>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
             </div>
+            <!--EDIT GROWDEVER-->
+            <div id="edit-growdever">
+                <div id="main2" class="container-fluid">
+                    <div class="tbl-header">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <h6>Editar Growdever</h6>
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <hr>
+                    <form>
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label for="campo1">E-mail</label>
+                                <input type="text" class="form-control" id="edit-email-growdever"
+                                    placeholder="Atualize seu e-mail">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="campo2">Telefone/Celular</label>
+                                <input type="text" class="form-control" id="edit-phone-growdever"
+                                    placeholder="Atualize seu celular">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="campo3">Programa</label>
+                                <input type="text" class="form-control" id="edit-program-growdever"
+                                    placeholder="Starter ou Advanced">
+                            </div>
+                            <hr />
+                            <div id="actions" class="row">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn btn-primary"
+                                        id="edit-new-growdever">Atualizar</button>
+                                    <a href="#" class="btn btn-default">Cancelar</a>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+            </main>
+        </div>
         </div>
     </section>
 
 </body>
 <script src="./bundle.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
 
 
 </html>

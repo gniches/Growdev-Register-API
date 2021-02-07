@@ -65,6 +65,19 @@ class API {
 
         return api.delete(url);
     }
+
+    putAuth(url, data, token) {
+        const api = axios.create({
+            baseURL: this.baseUrl,
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+                Authorization: `Bearer ${token}`
+            },
+        });
+
+        return api.put(url, data);
+    }
 }
 
 export default new API();
