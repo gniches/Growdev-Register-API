@@ -11,12 +11,14 @@ class App {
         this.token = "";
 
         this.growdeversList = [];
+        this.usersList = [];
         this.user_id = "f0e37a13-4650-45d4-a17a-bf99bef9d981";
         document.getElementById('login-page').style.display = "flex";
         document.getElementById('home-page').style.display = "none";
         document.getElementById('adm-growdever').style.display = "none";
         document.getElementById('edit-growdever').style.display = "none";
         document.getElementById('new-growdever').onclick = () => this.addGrowdever();
+        document.getElementById('users-tab').onclick = () => this.searchUsers();
 
     }
 
@@ -37,6 +39,8 @@ class App {
                     //Retornou sucesso no login
                     document.getElementById('login-page').style.display = "none";
                     document.getElementById('home-page').style.display = "flex";
+                    document.getElementById('tbl-header-users').style.display = "none";
+                    document.getElementById('show-users-list').style.display = "none";
                     this.searchGrowdevers();
                 }
             }).catch(e => alert(e.response.data.message));
@@ -55,7 +59,9 @@ class App {
             "password": password,
             "type": type
         })
-            .then(r => console.log(r.data))
+            .then(r => {
+                alert("Cadastro efetuado com sucesso!");
+            })
             .catch(e => alert(e.response.data.message));
 
     };
@@ -165,7 +171,7 @@ class App {
         document.getElementById("adm-growdever").style.display = "none";
         document.getElementById("edit-growdever").style.display = "block";
 
-        this, this.growdeversList.forEach(gd => {
+        this.growdeversList.forEach(gd => {
             if (gd.uid === uid) {
                 document.getElementById('edit-email-growdever').value = gd.email;
                 document.getElementById('edit-phone-growdever').value = gd.phone;
@@ -196,6 +202,115 @@ class App {
                 }
             }
         })
+    }
+
+    searchUsers() {
+        document.getElementById("show-list").style.display = "none";
+        document.getElementById("tbl-header").style.display = "none";
+        document.getElementById("edit-users").style.display = "none";
+        
+        
+        document.getElementById("tbl-header-users").style.display = "block";
+        document.getElementById("show-users-list").style.display = "block";
+
+        api.getAuth('/users', this.token)
+            .then(r => {
+
+                let html = "";
+
+                r.data.users.forEach((gd) => {
+                    this.usersList.push(gd);
+                    html += `                
+                <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                            <tr>
+                            <td>${gd.uid}</td>
+                            <td>${gd.name}</td>
+                            <td>${gd.type}</td>
+                            <td>${gd.username}</td>                                                       
+                            <td>
+                            <button type="button" class="btn btn-danger btn delete-user" data-id="${gd.uid}">Excluir</button>
+                            <button type="button" class="btn btn-primary btn edit-user" data-id="${gd.uid}">Editar</button>                            
+                            </td>                            
+                            </tr>        
+                        </tbody>
+                    </table>
+                </div>
+                `;
+                })
+
+                document.getElementById("show-users-list").innerHTML = html;
+
+                document.querySelectorAll(".delete-user").forEach(el => {
+                    el.onclick = (event) => this.deleteUsers(event);
+                });
+
+                document.querySelectorAll(".edit-user").forEach(el => {
+                    el.onclick = (event) => this.editUsers(event);
+                });
+
+            });
+    }
+
+    deleteUsers(event) {
+        let uid = event.composedPath()[0].dataset.id;
+
+        if (!confirm("Confirma a exclusão?")) {
+            return;
+        }
+
+        api.deleteAuth(`/users/${uid}`, this.token)
+            .then(r => {
+                this.searchUsers();
+                alert("Usuário deletado com sucesso!");
+            })
+            .catch(e => alert(e.response.data.message));
+    }
+
+    editUsers(event) {
+        alert(event);
+        
+        let uid = event.composedPath()[0].dataset.id;        
+
+        document.getElementById("show-list").style.display = "none";
+        document.getElementById("cabecalhoUsers").style.display = "none";
+        document.getElementById("tbl-header").style.display = "none";
+        document.getElementById("adm-growdever").style.display = "none";
+        document.getElementById("edit-growdever").style.display = "none";
+        document.getElementById("show-users-list").style.display = "none";
+        document.getElementById("tbl-header-users").style.display = "block";
+        document.getElementById("edit-users").style.display = "block";
+
+        this.usersList.forEach(gd => {
+            if (gd.uid === uid) {
+                document.getElementById('edit-user-name').value = gd.name;
+                document.getElementById('edit-user-type').value = gd.type;
+                document.getElementById('edit-user-username').value = gd.username;
+
+                document.getElementById("edit-new-user").onclick = () => {
+
+                    let name = document.getElementById('edit-user-name').value;
+                    let type = document.getElementById('edit-user-type').value;
+                    let username = document.getElementById('edit-user-username').value;
+                    
+
+                    api.putAuth(`/users/${uid}`, {
+                        "name": name,
+                        "username": username,
+                        "type": type
+                        
+                    }, this.token)
+                        .then(r => {                            
+                            alert("Dados atualizados com sucesso!");
+                            this.searchUsers();
+                        })
+                        .catch(e => alert(e.response.data.message));
+
+                }
+            }
+        })
+        
     }
 }
 

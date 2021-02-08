@@ -95,8 +95,8 @@
                                 </li>
                                 <hr class="hr-dashbord">
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0" href="#"><i class="fa fa-cog fa-fw"></i> <span
-                                            class="d-none d-md-inline">Conta</span></a>
+                                    <a class="nav-link pl-0" href="#" id="users-tab"><i class="fa fa-cog fa-fw"></i>
+                                        <span class="d-none d-md-inline">Users</span></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link pl-0" href="#" id="growdevers-tab"><i
@@ -143,6 +143,72 @@
                             <!--INJECTED BY JS-->
                         </div>
                     </div>
+                    <!--USERS HEADER-->
+                    <div id="tbl-header-users">
+                        <div class="tbl-header" id="cabecalhoUsers">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th>UID</th>
+                                        <th>Nome</th>
+                                        <th>Tipo</th>
+                                        <th>Username</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <!--SHOW USERS-->
+                        <div id="show-users-list">
+                            <!--INJECTED BY JS-->
+                        </div>
+                        <!--EDIT USERS-->
+                        <div id="edit-users">
+                            <div id="main3" class="container-fluid">
+                                <div class="tbl-header">
+                                    <table cellpadding="0" cellspacing="0" border="0">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <h6>Editar User</h6>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <hr>
+                                <form>
+                                    <div class="row">
+                                        <div class="form-group col-md-3">
+                                            <label for="campo1">Nome</label>
+                                            <input type="text" class="form-control" id="edit-user-name"
+                                                placeholder="Atualize seu e-mail">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="campo2">Tipo</label>
+                                            <input type="text" class="form-control" id="edit-user-type"
+                                                placeholder="Atualize seu celular">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="campo3">Username</label>
+                                            <input type="text" class="form-control" id="edit-user-username"
+                                                placeholder="Starter ou Advanced">
+                                        </div>
+                                        <hr />
+                                        <div id="actions" class="row">
+                                            <div class="col-md-12">
+                                                <button type="button" class="btn btn-primary"
+                                                    id="edit-new-user">Atualizar</button>
+                                                <a href="#" class="btn btn-default">Cancelar</a>
+                                            </div>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
                     <!--ADD GROWDEVER-->
                     <div id="adm-growdever">
                         <div id="main" class="container-fluid">
@@ -188,54 +254,55 @@
                             </form>
                         </div>
                     </div>
-            </div>
-            <!--EDIT GROWDEVER-->
-            <div id="edit-growdever">
-                <div id="main2" class="container-fluid">
-                    <div class="tbl-header">
-                        <table cellpadding="0" cellspacing="0" border="0">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <h6>Editar Growdever</h6>
-                                    </th>
-                                </tr>
-                            </thead>
-                        </table>
+            
+                    <!--EDIT GROWDEVER-->
+                    <div id="edit-growdever">
+                        <div id="main2" class="container-fluid">
+                            <div class="tbl-header">
+                                <table cellpadding="0" cellspacing="0" border="0">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <h6>Editar Growdever</h6>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <hr>
+                            <form>
+                                <div class="row">
+                                    <div class="form-group col-md-3">
+                                        <label for="campo1">E-mail</label>
+                                        <input type="text" class="form-control" id="edit-email-growdever"
+                                            placeholder="Atualize seu e-mail">
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label for="campo2">Telefone/Celular</label>
+                                        <input type="text" class="form-control" id="edit-phone-growdever"
+                                            placeholder="Atualize seu celular">
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label for="campo3">Programa</label>
+                                        <input type="text" class="form-control" id="edit-program-growdever"
+                                            placeholder="Starter ou Advanced">
+                                    </div>
+                                    <hr />
+                                    <div id="actions" class="row">
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary"
+                                                id="edit-new-growdever">Atualizar</button>
+                                            <a href="#" class="btn btn-default">Cancelar</a>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
                     </div>
-                    <hr>
-                    <form>
-                        <div class="row">
-                            <div class="form-group col-md-3">
-                                <label for="campo1">E-mail</label>
-                                <input type="text" class="form-control" id="edit-email-growdever"
-                                    placeholder="Atualize seu e-mail">
-                            </div>
 
-                            <div class="form-group col-md-3">
-                                <label for="campo2">Telefone/Celular</label>
-                                <input type="text" class="form-control" id="edit-phone-growdever"
-                                    placeholder="Atualize seu celular">
-                            </div>
-
-                            <div class="form-group col-md-3">
-                                <label for="campo3">Programa</label>
-                                <input type="text" class="form-control" id="edit-program-growdever"
-                                    placeholder="Starter ou Advanced">
-                            </div>
-                            <hr />
-                            <div id="actions" class="row">
-                                <div class="col-md-12">
-                                    <button type="button" class="btn btn-primary"
-                                        id="edit-new-growdever">Atualizar</button>
-                                    <a href="#" class="btn btn-default">Cancelar</a>
-                                </div>
-                            </div>
-                    </form>
-                </div>
+                </main>
             </div>
-            </main>
-        </div>
         </div>
     </section>
 
